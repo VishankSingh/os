@@ -7,12 +7,12 @@ start:
     jmp         main   
 
 puts:
-            ;save registers we use to the stack
+    ;save registers we use to the stack
     push        si              ;save si
     push        ax              ;save ax
 
 .loop:
-            ;load the next character
+    ;load the next character
     lodsb                       ;load next character into al
     or          al, al          ;check if al is 0
     jz         .done            ;if al is 0, we're done
@@ -31,7 +31,7 @@ puts:
 main:
                         
     ;setup data segments
-    mov         ax, 0           ;
+    mov         ax, 0           
     mov         ds, ax          
     mov         es, ax          
     ;setup stack
@@ -48,7 +48,7 @@ main:
     jmp .halt
 
 
-msg_hello: db 'Hello World!', ENDL, 0
+msg_hello: db 'Hello World! hhhh $$', ENDL, 0
 
 ;Pad the boot sector to 510 bytes and add the boot sector signature
 ;Boot sector signature
